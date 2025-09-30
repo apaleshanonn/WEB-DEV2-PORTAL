@@ -8,20 +8,40 @@
 </head>
 <body>
   <div class="login-card">
-    <img src="logo.jpeg" alt="Imong logo!!!!" class="logo">
+    <img src="logo.jpeg" alt= class="logo">
     <h2>Shanonn Portal</h2>
-    <form>
+    <form onsubmit="return checkLogin(event)">
       <div class="input-group">
-        <input type="email" placeholder="Username" required>
+        <input type="textl" id="username" placeholder="Username" required>
       </div>
       <div class="input-group">
-        <input type="password" placeholder="Password" required>
+        <input type="password" id="password" placeholder="Password" required>
       </div>
       <div class="checkbox-group">
         <input type="checkbox" id="staySignedIn">
+        <label for="staySignedIn">Stay signed in</label>
       </div>
-      <a href="index.html">Log in</a>
+      <button type="submit">Log in</button>
     </form>
+    <p id="error" style="color:red;"></p>
   </div>
+
+  <script>
+    function checkLogin(event) {
+      event.preventDefault(); 
+
+      const validUser = "APALE";
+      const validPass = "GWAPA";
+
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (user === validUser && pass === validPass) {
+        window.location.href = "index.html";
+      } else {
+        document.getElementById("error").innerText = "Invalid username or password!";
+      }
+    }
+  </script>
 </body>
-</html>
+    </html>
