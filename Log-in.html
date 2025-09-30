@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="login-card">
-    <img src="logo.jpeg" alt= class="logo">
+    <img src="logo.jpeg" alt="logo" class="logo">
     <h2>Shanonn Portal</h2>
     <form onsubmit="return checkLogin(event)">
       <div class="input-group">
-        <input type="textl" id="username" placeholder="Username" required>
+        <input type="text" id="username" placeholder="Username" required>
       </div>
       <div class="input-group">
         <input type="password" id="password" placeholder="Password" required>
@@ -23,12 +23,12 @@
       </div>
       <button type="submit">Log in</button>
     </form>
-    <p id="error" style="color:red;"></p>
+    <p id="error" class="error"></p>
   </div>
 
   <script>
     function checkLogin(event) {
-      event.preventDefault(); 
+      event.preventDefault();
 
       const validUser = "APALE";
       const validPass = "GWAPA";
@@ -37,7 +37,7 @@
       const pass = document.getElementById("password").value;
 
       if (user === validUser && pass === validPass) {
-        window.location.href = "index.html";
+        window.location.href = "Index.html";
       } else {
         document.getElementById("error").innerText = "Invalid username or password!";
       }
