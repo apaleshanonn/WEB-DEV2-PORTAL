@@ -10,7 +10,8 @@
   <div class="login-card">
     <img src="logo.jpeg" alt="logo" class="logo">
     <h2>Shanonn Portal</h2>
-    <form onsubmit="return checkLogin(event)">
+    
+    <form id="loginForm">
       <div class="input-group">
         <input type="text" id="username" placeholder="Username" required>
       </div>
@@ -23,25 +24,30 @@
       </div>
       <button type="submit">Log in</button>
     </form>
+    
     <p id="error" style="color:red;"></p>
   </div>
 
   <script>
-    function checkLogin(event) {
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
       event.preventDefault();   
 
       const validUser = "APALESHANONN";
-      const validPass = "SHANKYUT";
+      const validPass = "shankyut";
 
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
+      const user = document.getElementById("username").value.trim();
+      const pass = document.getElementById("password").value.trim();
+
+      const error = document.getElementById("error");
+      error.innerText = ""; 
 
       if (user === validUser && pass === validPass) {
-        window.location.href = "index.html";
+        //✅ login success
+        window.location.href = "index.html"; 
       } else {
-        document.getElementById("error").innerText = "Invalid username or password!";
+        error.innerText = "Invalid username or password!";
       }
-    }
+    });
   </script>
 </body>
 </html>
