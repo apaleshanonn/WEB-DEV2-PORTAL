@@ -23,12 +23,12 @@
       </div>
       <button type="submit">Log in</button>
     </form>
-    <p id="error" class="error"></p>
+    <p id="error" style="color:red;"></p>
   </div>
 
   <script>
     function checkLogin(event) {
-      event.preventDefault();
+      event.preventDefault();   
 
       const validUser = "APALE";
       const validPass = "GWAPA";
@@ -37,7 +37,7 @@
       const pass = document.getElementById("password").value;
 
       if (user === validUser && pass === validPass) {
-        window.location.href = "Index.html";
+        window.location.href = "index.html";
       } else {
         document.getElementById("error").innerText = "Invalid username or password!";
       }
