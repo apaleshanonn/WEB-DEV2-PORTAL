@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portal</title>
+  <title>Shanonn Portal</title>
   <link rel="stylesheet" href="Log-in.css">
 </head>
 <body>
@@ -41,8 +41,7 @@
       const error = document.getElementById("error");
       error.innerText = ""; 
 
-      if (user === validUser && pass === validPass) {
-        //✅ login success
+      if (user === validUser && pass === validPass) 
         window.location.href = "index.html"; 
       } else {
         error.innerText = "Invalid username or password!";
